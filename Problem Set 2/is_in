@@ -15,7 +15,6 @@ def isIn(char, aStr):
     
     returns: True if char is in aStr; False otherwise
     '''
-    # Your code here
     if len(aStr) == 0:
         return False
     elif len(aStr) == 1:
@@ -27,9 +26,14 @@ def isIn(char, aStr):
         if aStr[int(len(aStr) / 2)] == char:
             return True
         elif char < aStr[int(len(aStr) / 2)]:
+            print ("Middle character after < is " + aStr[int(len(aStr) / 2)])
             aStr = aStr[0:int(len(aStr) / 2)]
+            print("New string is " + aStr)
             return isIn(char, aStr)
         elif char > aStr[int(len(aStr) / 2)]:
-            aStr = aStr[int(len(aStr) / 2) :]
+            print ("Middle character after > is " + aStr[int(len(aStr) / 2)])
+            aStr = aStr[int(len(aStr) / 2) : ]
+            print("New strin is " + aStr)
+            print(len(aStr)-1)
             return isIn(char, aStr)
 
